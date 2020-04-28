@@ -6,7 +6,6 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
-    "test:silent": "ng test --silent",
     "lint": "ng lint",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
