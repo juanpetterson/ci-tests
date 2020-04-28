@@ -11,8 +11,6 @@ cache:
   npm: true
   directories:
     - ~/.cache
-before_install:
-  - export CHROME_BIN=chromium-browser
 install:
   - npm ci
 script:
