@@ -1,7 +1,9 @@
 language: node_js
 node_js:
   - 10
+sudo: required
 addons:
+  chrome: stable
   apt:
     packages:
       # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
@@ -15,5 +17,7 @@ cache:
     - ~/.cache
 install:
   - npm ci
+before_script:
+  - npm install -g --silent @angular/cli@9.1.0
 script:
   - npm run e2e
