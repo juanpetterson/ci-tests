@@ -4,15 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:prod": "http-server ./dist -a localhost -p 4200",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress": "concurrently \"ng serve\" \"cypress open\"",
-    "build-and-start:prod": "run-s build start:prod",
-    "e2e": "concurrently \"ng serve\" \"cypress run\""
+    "e2e": "start-server-and-test start http://localhost:4200 cypress:run"
   },
   "private": true,
   "dependencies": {
