@@ -15,8 +15,6 @@ cache:
   directories:
     # we also need to cache folder with Cypress binary
     - ~/.cache
-before_script:
-  - npm install -g --silent @angular/cli@9.1.0
 install:
   - npm ci
 script:
