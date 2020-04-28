@@ -1,14 +1,14 @@
 language: node_js
 node_js:
   - 10
+addons:
+  chrome: stable
 cache:
   npm: true
   directories:
     - ~/.cache
-before_install:
-  - export CHROME_BIN=chromium-browser
 install:
   - npm ci
 script:
-  - npm run test
+  - npm run test::silent
   - npm run e2e
