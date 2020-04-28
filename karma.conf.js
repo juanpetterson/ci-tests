@@ -17,6 +17,16 @@ module.exports = function (config) {
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true,
     },
+    // Config values to allow TravisCI to run chrome in it's container
+    browsers: ['Chrome', 'ChromeCanary'],
+    customLaunchers: {
+      // tell TravisCI to use chromium when testing
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox'],
+      },
+    },
+
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
@@ -26,4 +36,9 @@ module.exports = function (config) {
     singleRun: false,
     restartOnFileChange: true,
   });
+
+  // Detect if this is TravisCI running the tests and tell it to use chromium
+  if (process.env.TRAVIS) {
+    config.browsers = ['Chrome_travis_ci'];
+  }
 };
