@@ -20,4 +20,5 @@ before_script:
 install:
   - npm ci
 script:
+  - npm run test
   - npm run e2e
