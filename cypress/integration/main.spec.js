@@ -13,7 +13,7 @@ describe('Login Test', () => {
 
   // tslint:disable-next-line: max-line-length
   it('sign in with the right credentials, play the billboard meadia and go back to de browse page', () => {
-    cy.get('#emaill').type('juan@netflix.com');
+    cy.get('#email').type('juan@netflix.com');
     cy.get('#password').type('juanflix');
     cy.get('.login-form__button').click();
 
