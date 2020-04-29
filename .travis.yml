@@ -10,5 +10,6 @@ cache:
 install:
   - npm ci
 script:
+  - npm run test:coverage
   - npm run test:silent
   - npm run e2e
