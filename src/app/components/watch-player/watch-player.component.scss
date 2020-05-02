@@ -88,6 +88,11 @@
     height: 100%;
     background-color: #5b5b5b;
     cursor: pointer;
+
+    &::-webkit-progress-value {
+      border-radius: 2px;
+      background-image: -webkit-linear-gradient(left, red, red);
+    }
   }
 
   &__duration {

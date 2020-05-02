@@ -12,7 +12,12 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress": "concurrently \"ng serve\" \"cypress open\"",
-    "e2e": "start-server-and-test start http://localhost:4200 cypress:run"
+    "cypress:ci": "ng build --prod && run-p start:ci cypress:run",
+    "start:ci": "http-server ./dist -a localhost -p 4200",
+    "build:prod": "ng build --prod",
+    "start:prod": "http-server ./dist -a localhost -p 4200",
+    "build-and-start:prod": "run-s build:prod start:prod",
+    "e2e": "start-server-and-test build-and-start:prod http://localhost:4200 cypress:run"
   },
   "private": true,
   "dependencies": {

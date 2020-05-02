@@ -28,12 +28,16 @@
   </div>
   <div class="watch-player__footer" #footer>
     <div class="progress-bar">
-      <div class="progress-bar__container">
-        <div class="progress-bar__current" [style.width]="progress + '%'"></div>
-      </div>
-      <div class="progress-bar__duration">
+      <progress class="progress-bar__container" max="100" [value]="progress">
+        <!-- <div
+          id="progress"
+          class="progress-bar__current"
+          [style.width]="progress + '%'"
+        ></div> -->
+      </progress>
+      <span for="progress" class="progress-bar__duration">
         {{ (player.duration - player.currentTime) * 1000 | date: 'mm:ss' }}
-      </div>
+      </span>
     </div>
     <app-watch-player-controls
       class="watch-player-controls"
